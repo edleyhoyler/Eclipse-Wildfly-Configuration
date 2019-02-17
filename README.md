@@ -3,16 +3,25 @@
 [![GitHub issues](https://img.shields.io/github/issues/edleyhoyler/Eclipse-Wildfly-Configuration.svg?style=flat-square)](https://github.com/edleyhoyler/Eclipse-Wildfly-Configuration/issues)
 [![GitHub license](https://img.shields.io/github/license/edleyhoyler/Eclipse-Wildfly-Configuration.svg?style=flat-square)](https://github.com/edleyhoyler/Eclipse-Wildfly-Configuration/blob/master/README.md)
 -------
-# Eclipse Wildfly Configuration
-Eclipse Wildfly 15.0.1 Configuration Example
+# :coffee: Eclipse Wildfly Configuration
+### Eclipse Wildfly 15.0.1 Configuration Example
 
 ![Eclipse-Wildfly-Configuration.png](https://i.imgur.com/PrdJekf.png)
 
-http listening : http://127.0.0.1:8080
-https listening : https://127.0.0.1:8443
-Admin console listening : http://127.0.0.1:9990
-Http management interface listening : http://127.0.0.1:9990/management
 
+## :computer: Listening
+| HTTP(S)     Security     | Local                                            |
+| ------------------------ | ------------------------------------------------ |
+| :globe_with_meridians:   | [http://127.0.0.1:8080](http://127.0.0.1:8080)   |
+| :closed_lock_with_key:   | [https://127.0.0.1:8443](https://127.0.0.1:8443) |
+
+## :computer: Console
+| HTTP(S)       Security | Local                                                               |
+| ---------------------- | ------------------------------------------------------------------- |
+| :globe_with_meridians: | [http://127.0.0.1:9990](http://127.0.0.1:9990)                      |
+| :globe_with_meridians: | [http://127.0.0.1:9990/management](http://127.0.0.1:9990/management)|
+
+  
 # Licença
 -------
 MIT License

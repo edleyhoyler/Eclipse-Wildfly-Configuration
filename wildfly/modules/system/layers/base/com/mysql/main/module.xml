@@ -23,10 +23,10 @@
   ~ #
   ~ #
   ~ # 
-  ~ # This file needs to be placed in WILDFLY_DIR/modules/system/layers/base/com/mysql/8.0.13/
+  ~ # This file needs to be placed in WILDFLY_DIR/modules/system/layers/base/com/mysql/main/
   ~ # The mysql connector needs to go there as well.
   ~ # File: module.xml
-  ~ # File: mysql-connector-java-8.0.13.jar
+  ~ # File: mysql-connector-java-8.0.15.jar
   ~ #
   ~ #
   ~ # 
@@ -44,9 +44,9 @@
   ~ Configuration  >  Subsystem (30)  > Datasources & Drivers  >  JDBC Drivers
   ~ 		 Subsystems   >   Datasources & Drivers   >  JDBC Drivers > Add JDBC Driver 
   ~ 
-  ~ Driver Name                     : MySQL8.0.13_DCN
+  ~ Driver Name                     : MySQL8.0.15_DCN
   ~ Driver Module Name              : com.mysql
-  ~ Module Slot                     : 8.0.13
+  ~ Module Slot                     : main
   ~ Driver Class Name               : com.mysql.cj.jdbc.Driver
   ~ Driver Datasource Class Name    :
   ~ Driver XA Datasource Class Name :
@@ -60,7 +60,7 @@
    		<profile>
    			<datasources>
    				<drivers>
-                    <driver name="MySQL8.0.13_DCN" module="com.mysql:8.0.13">
+                    <driver name="MySQL8.0.15_DCN" module="com.mysql:main">
                         <driver-class>com.mysql.cj.jdbc.Driver</driver-class>
                     </driver>
    				<drivers>
@@ -83,9 +83,9 @@
   ~ Configuration  >  Subsystem (30)  > Datasources & Drivers  >  JDBC Drivers
   ~ 		 Subsystems   >   Datasources & Drivers   >  JDBC Drivers > Add JDBC Driver 
   ~ 
-  ~ Driver Name                     : MySQL8.0.13_DDCN
+  ~ Driver Name                     : MySQL8.0.15_DDCN
   ~ Driver Module Name              : com.mysql
-  ~ Module Slot                     : 8.0.13
+  ~ Module Slot                     : main
   ~ Driver Class Name               :  
   ~ Driver Datasource Class Name    : com.mysql.cj.jdbc.MysqlDataSource
   ~ Driver XA Datasource Class Name :
@@ -99,7 +99,7 @@
    		<profile>
    			<datasources>
    				<drivers>
-                    <driver name=" MySQL8.0.13_DDCN" module="com.mysql:8.0.13">
+                    <driver name="MySQL8.0.15_DDCN" module="com.mysql:main">
                         <datasource-class>com.mysql.cj.jdbc.MysqlDataSource</datasource-class>
                     </driver>
    				<drivers>
@@ -122,9 +122,9 @@
   ~ Configuration  >  Subsystem (30)  > Datasources & Drivers  >  JDBC Drivers
   ~ 		 Subsystems   >   Datasources & Drivers   >  JDBC Drivers > Add JDBC Driver
   ~ 
-  ~ Driver Name                     : MySQL8.0.13_XA
+  ~ Driver Name                     : MySQL8.0.15_XA
   ~ Driver Module Name              : com.mysql
-  ~ Module Slot                     : 8.0.13
+  ~ Module Slot                     : main
   ~ Driver Class Name               :  
   ~ Driver Datasource Class Name    :
   ~ Driver XA Datasource Class Name : com.mysql.cj.jdbc.MysqlXADataSource
@@ -138,7 +138,7 @@
    		<profile>
    			<datasources>
    				<drivers>
-                    <driver name="MySQL8.0.13_XA" module="com.mysql:8.0.13">
+                    <driver name="MySQL8.0.15_XA" module="com.mysql:main">
                         <xa-datasource-class>com.mysql.cj.jdbc.MysqlXADataSource</xa-datasource-class>
                     </driver>
    				<drivers>
@@ -154,26 +154,26 @@
   ~ #
   ~ #
   ~ # 
-  ~                  <driver name="MySQL8.0.13_DCN" module="com.mysql:8.0.13">
-  ~                      <driver-class>com.mysql.cj.jdbc.Driver</driver-class>
-  ~                   </driver>
-  ~					
-  ~                 <driver name=" MySQL8.0.13_DDCN" module="com.mysql:8.0.13">
-  ~                      <datasource-class>com.mysql.cj.jdbc.MysqlDataSource</datasource-class>
-  ~                  </driver>
-  ~					
-  ~                  <driver name="MySQL8.0.13_XA" module="com.mysql:8.0.13">
-  ~                      <xa-datasource-class>com.mysql.cj.jdbc.MysqlXADataSource</xa-datasource-class>
-  ~                 </driver>
+  ~                    <driver name="MySQL8.0.15_DCN" module="com.mysql:main">
+  ~                        <driver-class>com.mysql.cj.jdbc.Driver</driver-class>
+  ~                    </driver>
+  ~
+  ~                    <driver name="MySQL8.0.15_DDCN" module="com.mysql:main">
+  ~                        <datasource-class>com.mysql.cj.jdbc.MysqlDataSource</datasource-class>
+  ~                    </driver>
+  ~
+  ~                    <driver name="MySQL8.0.15_XA" module="com.mysql:main">
+  ~                        <xa-datasource-class>com.mysql.cj.jdbc.MysqlXADataSource</xa-datasource-class>
+  ~                    </driver> 
   ~ #
   ~ #
   ~ # 
   ~	################################################################################################
-  ~ by Edy
+  ~	by Edy
 	-->
-<module name="com.mysql" xmlns="urn:jboss:module:1.5" slot="8.0.13">
+<module name="com.mysql" xmlns="urn:jboss:module:1.5" slot="main">
 	<resources>
-		<resource-root path="mysql-connector-java-8.0.13.jar"/>
+		<resource-root path="mysql-connector-java-8.0.15.jar"/>
 	</resources>
 	<dependencies>
 		<module name="javax.api"/>

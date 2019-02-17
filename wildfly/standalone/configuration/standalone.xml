@@ -173,10 +173,19 @@
                     <driver name="MySQL8.0.13_DCN" module="com.mysql:8.0.13">
                         <driver-class>com.mysql.cj.jdbc.Driver</driver-class>
                     </driver>
-                    <driver name=" MySQL8.0.13_DDCN" module="com.mysql:8.0.13">
+                    <driver name="MySQL8.0.13_DDCN" module="com.mysql:8.0.13">
                         <datasource-class>com.mysql.cj.jdbc.MysqlDataSource</datasource-class>
                     </driver>
                     <driver name="MySQL8.0.13_XA" module="com.mysql:8.0.13">
+                        <xa-datasource-class>com.mysql.cj.jdbc.MysqlXADataSource</xa-datasource-class>
+                    </driver>
+                    <driver name="MySQL8.0.15_DCN" module="com.mysql:main">
+                        <driver-class>com.mysql.cj.jdbc.Driver</driver-class>
+                    </driver>
+                    <driver name="MySQL8.0.15_DDCN" module="com.mysql:main">
+                        <datasource-class>com.mysql.cj.jdbc.MysqlDataSource</datasource-class>
+                    </driver>
+                    <driver name="MySQL8.0.15_XA" module="com.mysql:main">
                         <xa-datasource-class>com.mysql.cj.jdbc.MysqlXADataSource</xa-datasource-class>
                     </driver>
                 </drivers>
