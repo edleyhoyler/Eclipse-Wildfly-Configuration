@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ ################################################################################################
+  ~ #
+  ~ #
+  ~ # 
+  ~ # This file needs to be placed in WILDFLY_DIR/modules/system/layers/base/com/mysql/5.1.47/
+  ~ # The mysql connector needs to go there as well.
+  ~ # File: module.xml
+  ~ # File: mysql-connector-java-5.1.47.jar
+  ~ #
+  ~ #
+  ~ # 
+  ~	################################################################################################
+  ~
+  ~ 
+  ~ ################################################################################################
+  ~ #
+  ~ #
+  ~ # 
+  ~ PART 1 mode (Add JDBC Driver) via Driver Class Name
+  ~ Add (Automatic):
+  ~ 
+  ~ 
+  ~ Configuration  >  Subsystem (30)  > Datasources & Drivers  >  JDBC Drivers
+  ~ 		 Subsystems   >   Datasources & Drivers   >  JDBC Drivers > Add JDBC Driver 
+  ~ 
+  ~ Driver Name                     : MySQL5.1.47_DCN
+  ~ Driver Module Name              : com.mysql
+  ~ Module Slot                     : 5.1.47
+  ~ Driver Class Name               : com.mysql.jdbc.Driver
+  ~ Driver Datasource Class Name    :
+  ~ Driver XA Datasource Class Name :
+  ~
+  ~ 
+  ~ Add (Manual):
+  ~ 
+  ~ 
+  ~ Edit XML Script WILDFLY_DIR/standalone/configuration/standalone.xml ADD DRIVER
+  ~
+   		<profile>
+   			<datasources>
+   				<drivers>
+                    <driver name="MySQL5.1.47_DCN" module="com.mysql:5.1.47">
+                        <driver-class>com.mysql.jdbc.Driver</driver-class>
+                    </driver>
+   				<drivers>
+   			<datasources>
+ 		</profile>
+  ~ #
+  ~ #
+  ~ # 
+  ~	################################################################################################
+  ~
+  ~ 
+  ~ ################################################################################################
+  ~ #
+  ~ #
+  ~ # 
+  ~ # PART 1 mode (Add JDBC Driver) via Driver Datasource Class Name
+  ~ Add (Automatic):
+  ~ 
+  ~ 
+  ~ Configuration  >  Subsystem (30)  > Datasources & Drivers  >  JDBC Drivers
+  ~ 		 Subsystems   >   Datasources & Drivers   >  JDBC Drivers > Add JDBC Driver 
+  ~ 
+  ~ Driver Name                     : MySQL5.1.47_DDCN
+  ~ Driver Module Name              : com.mysql
+  ~ Module Slot                     : 5.1.47
+  ~ Driver Class Name               :  
+  ~ Driver Datasource Class Name    : com.mysql.jdbc.jdbc2.optional.MysqlDataSource
+  ~ Driver XA Datasource Class Name :
+  ~
+  ~ 
+  ~ Add (Manual):
+  ~ 
+  ~ 
+  ~ Edit XML Script WILDFLY_DIR/standalone/configuration/standalone.xml ADD DRIVER
+  ~
+   		<profile>
+   			<datasources>
+   				<drivers>
+                    <driver name="MySQL5.1.47_DDCN" module="com.mysql:5.1.47">
+                        <datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlDataSource</datasource-class>
+                    </driver>
+   				<drivers>
+   			<datasources>
+ 		</profile>
+  ~ #
+  ~ #
+  ~ # 
+  ~	################################################################################################
+  ~
+  ~ 
+  ~ ################################################################################################
+  ~ #
+  ~ #
+  ~ # 
+  ~ # PART 1 mode (Add JDBC Driver XA) via Driver XA Datasource Class Name
+  ~ Add (Automatic):
+  ~ 
+  ~ 
+  ~ Configuration  >  Subsystem (30)  > Datasources & Drivers  >  JDBC Drivers
+  ~ 		 Subsystems   >   Datasources & Drivers   >  JDBC Drivers > Add JDBC Driver
+  ~ 
+  ~ Driver Name                     : MySQL5.1.47_XA
+  ~ Driver Module Name              : com.mysql
+  ~ Module Slot                     : 5.1.47
+  ~ Driver Class Name               :  
+  ~ Driver Datasource Class Name    :
+  ~ Driver XA Datasource Class Name : com.mysql.jdbc.jdbc2.optional.MysqlXADataSource
+  ~
+  ~ 
+  ~ Add (Manual):
+  ~ 
+  ~ 
+  ~ Edit XML Script WILDFLY_DIR/standalone/configuration/standalone.xml ADD DRIVER
+  ~
+   		<profile>
+   			<datasources>
+   				<drivers>
+                    <driver name="MySQL5.1.47_XA" module="com.mysql:5.1.47">
+                        <xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
+                    </driver>
+   				<drivers>
+   			<datasources>
+ 		</profile>
+  ~ #
+  ~ #
+  ~ # 
+  ~	################################################################################################
+  ~ ################################################################################################
+  ~ #
+  ~ #
+  ~ # 
+  ~			    	<driver name="MySQL5.1.47_DCN" module="com.mysql:5.1.47">
+  ~                     <driver-class>com.mysql.jdbc.Driver</driver-class>
+  ~                 </driver>
+  ~  
+  ~                 <driver name="MySQL5.1.47_DDCN" module="com.mysql:5.1.47">
+  ~                     <datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlDataSource</datasource-class>
+  ~                 </driver>
+  ~  
+  ~                <driver name="MySQL5.1.47_XA" module="com.mysql:5.1.47">
+  ~                    <xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
+  ~                </driver>
+  ~ #
+  ~ #
+  ~ # 
+  ~	################################################################################################
+    by Edy
+  -->
+<module name="com.mysql" xmlns="urn:jboss:module:1.5" slot="5.1.47">
+    <resources>
+        <resource-root path="mysql-connector-java-5.1.47.jar"/>
+    </resources>
+    <dependencies>
+        <module name="javax.api"/>
+        <module name="javax.transaction.api"/>
+        <module name="javax.servlet.api" optional="true"/>
+    </dependencies>
+</module>
+<!--
+  ~
+  ~ 
+  ~ by Edy
+  ~ 
+  ~ 
+  -->

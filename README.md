@@ -8,6 +8,10 @@ Eclipse Wildfly 15.0.1 Configuration Example
 
 ![Eclipse-Wildfly-Configuration.png](https://i.imgur.com/PrdJekf.png)
 
+http listening : http://127.0.0.1:8080
+https listening : https://127.0.0.1:8443
+Admin console listening : http://127.0.0.1:9990
+Http management interface listening : http://127.0.0.1:9990/management
 
 # Licença
 -------

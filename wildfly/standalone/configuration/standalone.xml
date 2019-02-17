@@ -161,6 +161,24 @@
                     <driver name="h2" module="com.h2database.h2">
                         <xa-datasource-class>org.h2.jdbcx.JdbcDataSource</xa-datasource-class>
                     </driver>
+                    <driver name="MySQL5.1.47_DCN" module="com.mysql:5.1.47">
+                        <driver-class>com.mysql.jdbc.Driver</driver-class>
+                    </driver>
+                    <driver name="MySQL5.1.47_DDCN" module="com.mysql:5.1.47">
+                        <datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlDataSource</datasource-class>
+                    </driver>
+                    <driver name="MySQL5.1.47_XA" module="com.mysql:5.1.47">
+                        <xa-datasource-class>com.mysql.jdbc.jdbc2.optional.MysqlXADataSource</xa-datasource-class>
+                    </driver>
+                    <driver name="MySQL8.0.13_DCN" module="com.mysql:8.0.13">
+                        <driver-class>com.mysql.cj.jdbc.Driver</driver-class>
+                    </driver>
+                    <driver name=" MySQL8.0.13_DDCN" module="com.mysql:8.0.13">
+                        <datasource-class>com.mysql.cj.jdbc.MysqlDataSource</datasource-class>
+                    </driver>
+                    <driver name="MySQL8.0.13_XA" module="com.mysql:8.0.13">
+                        <xa-datasource-class>com.mysql.cj.jdbc.MysqlXADataSource</xa-datasource-class>
+                    </driver>
                 </drivers>
             </datasources>
         </subsystem>
