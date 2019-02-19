@@ -188,6 +188,33 @@
                     <driver name="MySQL8.0.15_XA" module="com.mysql:main">
                         <xa-datasource-class>com.mysql.cj.jdbc.MysqlXADataSource</xa-datasource-class>
                     </driver>
+                    <driver name="MSSQL6.4.0_DCN" module="com.microsoft.sqlserver:6.4.0">
+                        <driver-class>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver-class>
+                    </driver>
+                    <driver name="MSSQL6.4.0_DDCN" module="com.microsoft.sqlserver:6.4.0">
+                        <datasource-class>com.microsoft.sqlserver.jdbc.SQLServerDataSource</datasource-class>
+                    </driver>
+                    <driver name="MSSQL6.4.0_XA" module="com.microsoft.sqlserver:6.4.0">
+                        <xa-datasource-class>com.microsoft.sqlserver.jdbc.SQLServerXADataSource</xa-datasource-class>
+                    </driver>
+                    <driver name="MSSQL7.0.0_DCN" module="com.microsoft.sqlserver:7.0.0">
+                        <driver-class>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver-class>
+                    </driver>
+                    <driver name="MSSQL7.0.0_DDCN" module="com.microsoft.sqlserver:7.0.0">
+                        <datasource-class>com.microsoft.sqlserver.jdbc.SQLServerDataSource</datasource-class>
+                    </driver>
+                    <driver name="MSSQL7.0.0_XA" module="com.microsoft.sqlserver:7.0.0">
+                        <xa-datasource-class>com.microsoft.sqlserver.jdbc.SQLServerXADataSource</xa-datasource-class>
+                    </driver>
+                    <driver name="MSSQL7.2.1_DCN" module="com.microsoft.sqlserver:main">
+                        <driver-class>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver-class>
+                    </driver>
+                    <driver name="MSSQL7.2.1_DDCN" module="com.microsoft.sqlserver:main">
+                        <datasource-class>com.microsoft.sqlserver.jdbc.SQLServerDataSource</datasource-class>
+                    </driver>
+                    <driver name="MSSQL7.2.1_XA" module="com.microsoft.sqlserver:main">
+                        <xa-datasource-class>com.microsoft.sqlserver.jdbc.SQLServerXADataSource</xa-datasource-class>
+                    </driver>
                 </drivers>
             </datasources>
         </subsystem>

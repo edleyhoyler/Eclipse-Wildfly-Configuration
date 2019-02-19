@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  ~ JBoss, Home of Professional Open Source.
+  ~ Copyright 2010, Red Hat, Inc., and individual contributors
+  ~ as indicated by the @author tags. See the copyright.txt file in the
+  ~ distribution for a full listing of individual contributors.
+  ~
+  ~ This is free software; you can redistribute it and/or modify it
+  ~ under the terms of the GNU Lesser General Public License as
+  ~ published by the Free Software Foundation; either version 2.1 of
+  ~ the License, or (at your option) any later version.
+  ~
+  ~ This software is distributed in the hope that it will be useful,
+  ~ but WITHOUT ANY WARRANTY; without even the implied warranty of
+  ~ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+  ~ Lesser General Public License for more details.
+  ~
+  ~ You should have received a copy of the GNU Lesser General Public
+  ~ License along with this software; if not, write to the Free
+  ~ Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA
+  ~ 02110-1301 USA, or see the FSF site: http://www.fsf.org.
+  ~ ################################################################################################
+  ~ #
+  ~ #
+  ~ # 
+  ~ # This file needs to be placed in WILDFLY_DIR/modules/system/layers/base/com/microsoft/sqlserver/6.4.0/
+  ~ # The mysql connector needs to go there as well.
+  ~ # File: module.xml
+  ~ # File: mssql-jdbc-6.4.0.jre8.jar
+  ~ #
+  ~ #
+  ~ # 
+  ~	################################################################################################
+  ~
+  ~ 
+  ~ ################################################################################################
+  ~ #
+  ~ #
+  ~ # 
+  ~ PART 1 mode (Add JDBC Driver) via Driver Class Name
+  ~ Add (Automatic):
+  ~ 
+  ~ 
+  ~ Configuration  >  Subsystem (30)  > Datasources & Drivers  >  JDBC Drivers
+  ~ 		 Subsystems   >   Datasources & Drivers   >  JDBC Drivers > Add JDBC Driver 
+  ~ 
+  ~ Driver Name                     : MSSQL6.4.0_DCN
+  ~ Driver Module Name              : com.microsoft.sqlserver
+  ~ Module Slot                     : 6.4.0
+  ~ Driver Class Name               : com.microsoft.sqlserver.jdbc.SQLServerDriver
+  ~ Driver Datasource Class Name    :
+  ~ Driver XA Datasource Class Name :
+  ~
+  ~ 
+  ~ Add (Manual):
+  ~ 
+  ~ 
+  ~ Edit XML Script WILDFLY_DIR/standalone/configuration/standalone.xml ADD DRIVER
+  ~
+   		<profile>
+   			<datasources>
+   				<drivers>
+                    <driver name="MSSQL6.4.0_DCN" module="com.microsoft.sqlserver:6.4.0">
+                        <driver-class>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver-class>
+                    </driver>
+   				<drivers>
+   			<datasources>
+ 		</profile>
+  ~ #
+  ~ #
+  ~ # 
+  ~	################################################################################################
+  ~
+  ~ 
+  ~ ################################################################################################
+  ~ #
+  ~ #
+  ~ # 
+  ~ # PART 1 mode (Add JDBC Driver) via Driver Datasource Class Name
+  ~ Add (Automatic):
+  ~ 
+  ~ 
+  ~ Configuration  >  Subsystem (30)  > Datasources & Drivers  >  JDBC Drivers
+  ~ 		 Subsystems   >   Datasources & Drivers   >  JDBC Drivers > Add JDBC Driver 
+  ~ 
+  ~ Driver Name                     : MSSQL6.4.0_DDCN
+  ~ Driver Module Name              : com.microsoft.sqlserver
+  ~ Module Slot                     : 6.4.0
+  ~ Driver Class Name               :  
+  ~ Driver Datasource Class Name    : com.microsoft.sqlserver.jdbc.SQLServerDataSource
+  ~ Driver XA Datasource Class Name :
+  ~
+  ~ 
+  ~ Add (Manual):
+  ~ 
+  ~ 
+  ~ Edit XML Script WILDFLY_DIR/standalone/configuration/standalone.xml ADD DRIVER
+  ~
+   		<profile>
+   			<datasources>
+   				<drivers>
+                    <driver name="MSSQL6.4.0_DDCN" module="com.microsoft.sqlserver:6.4.0">
+                        <datasource-class>com.microsoft.sqlserver.jdbc.SQLServerDataSource</datasource-class>
+                    </driver>
+   				<drivers>
+   			<datasources>
+ 		</profile>
+  ~ #
+  ~ #
+  ~ # 
+  ~	################################################################################################
+  ~
+  ~ 
+  ~ ################################################################################################
+  ~ #
+  ~ #
+  ~ # 
+  ~ # PART 1 mode (Add JDBC Driver XA) via Driver XA Datasource Class Name
+  ~ Add (Automatic):
+  ~ 
+  ~ 
+  ~ Configuration  >  Subsystem (30)  > Datasources & Drivers  >  JDBC Drivers
+  ~ 		 Subsystems   >   Datasources & Drivers   >  JDBC Drivers > Add JDBC Driver
+  ~ 
+  ~ Driver Name                     : MSSQL6.4.0_XA
+  ~ Driver Module Name              : com.microsoft.sqlserver
+  ~ Module Slot                     : 6.4.0
+  ~ Driver Class Name               :  
+  ~ Driver Datasource Class Name    :
+  ~ Driver XA Datasource Class Name : com.microsoft.sqlserver.jdbc.SQLServerXADataSource 
+  ~
+  ~ 
+  ~ Add (Manual):
+  ~ 
+  ~ 
+  ~ Edit XML Script WILDFLY_DIR/standalone/configuration/standalone.xml ADD DRIVER
+  ~
+   		<profile>
+   			<datasources>
+   				<drivers>
+                    <driver name="MSSQL6.4.0_XA" module="com.microsoft.sqlserver:6.4.0">
+                        <xa-datasource-class>com.microsoft.sqlserver.jdbc.SQLServerXADataSource</xa-datasource-class>
+                    </driver>
+   				<drivers>
+   			<datasources>
+ 		</profile>
+  ~ #
+  ~ #
+  ~ # 
+  ~	################################################################################################
+  ~
+  ~ 
+  ~ ################################################################################################
+  ~ #
+  ~ #  
+  ~ #
+  ~                    <driver name="MSSQL6.4.0_DCN" module="com.microsoft.sqlserver:6.4.0">
+  ~                        <driver-class>com.microsoft.sqlserver.jdbc.SQLServerDriver</driver-class>
+  ~                    </driver>
+  ~
+  ~                    <driver name="MSSQL6.4.0_DDCN" module="com.microsoft.sqlserver:6.4.0">
+  ~                        <datasource-class>com.microsoft.sqlserver.jdbc.SQLServerDataSource</datasource-class>
+  ~                    </driver>
+  ~
+  ~                   <driver name="MSSQL6.4.0_XA" module="com.microsoft.sqlserver:6.4.0">
+  ~                        <xa-datasource-class>com.microsoft.sqlserver.jdbc.SQLServerXADataSource</xa-datasource-class>
+  ~                    </driver>
+  ~ #
+  ~ #
+  ~ # 
+  ~	################################################################################################
+  ~	by Edy
+	-->
+<module name="com.microsoft.sqlserver" xmlns="urn:jboss:module:1.5" slot="6.4.0">
+	<resources>
+		<resource-root path="mssql-jdbc-6.4.0.jre8.jar"/>
+	</resources>
+	<dependencies>
+		<module name="javax.api"/>
+		<module name="javax.transaction.api"/>
+		<module name="javax.servlet.api" optional="true"/>
+	</dependencies>
+</module>
+<!--
+  ~
+  ~ 
+  ~ by Edy
+  ~ 
+  ~ 
+  -->
